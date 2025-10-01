@@ -64,8 +64,7 @@
         "scope": "python",
         "body": [
             "from strands.tools.mcp.mcp_client import MCPClient",
-            "from mcp.client.streamable_http import ",
-            "streamablehttp_client"
+            "from mcp.client.streamable_http import streamablehttp_client"
         ],
         "description": ""
     },
@@ -89,5 +88,60 @@
             "\"\"\""
         ],
         "description": ""
+    },
+    "tools": {
+        "prefix": "import tools",
+        "scope": "python",
+        "body": [
+            "from strands_tools import current_time"
+        ],
+        "description": ""
+    },
+    "mcp.run": {
+        "prefix": "mcp.run",
+        "scope": "python",
+        "body": [
+        "mcp.run(transport=\"streamable-http\")",
+        ],
+        "description": ""
+    },
+    "mcp_client": {
+        "prefix": "mcp_client",
+        "scope": "python",
+        "body": [
+        "mcp_client = MCPClient(lambda: streamablehttp_client(\"http://localhost:8080/mcp\"))",
+        ],
+        "description": ""
+    },
+    "haiku": {
+        "prefix": "haiku",
+        "scope": "python",
+        "body": [
+        "\"anthropic.claude-3-haiku-20240307-v1:0\"",
+        ],
+        "description": ""
+    },
+    "roll dice full method": {
+        "prefix": "roll dice full method",
+        "body": [
+            "def roll_dice(faces):",
+            "    \"\"\"",
+            "    Roll a dice with the specified number of faces.",
+            "",
+            "    Args:",
+            "      faces: The number of faces of the dice",
+            "    \"\"\"",
+            "    import random",
+            "    try:",
+            "        num_faces = int(faces)",
+            "        if num_faces <= 0:",
+            "            raise ValueError(\"Number of faces must be positive\")",
+            "        return random.randint(1, num_faces)",
+            "    except ValueError as e:",
+            "        return f\"Error: Invalid input - {e}\"",
+            "    except Exception as e:",
+            "        return f\"Error: {e}\""
+        ],
+        "description": "roll dice full method"
     }
 }
