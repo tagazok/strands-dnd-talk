@@ -1,0 +1,93 @@
+{
+    "BedrockModel modelId": {
+        "prefix": "BedrockModel modelId",
+        "scope": "python",
+        "body": [
+            "model_id=\"us.amazon.nova-premier-v1:0\""
+        ],
+        "description": ""
+    },
+    "Character agent description": {
+        "prefix": "Character agent description",
+        "scope": "python",
+        "body": [
+            "\"\"\"",
+            "Crée et gère les personnages de DnD avec leur nom, classe, race, statistiques et leur background",
+            "Tu peux écrire et lire les fichiers de personnage",
+            "\"\"\""
+        ],
+        "description": ""
+    },
+    "Import OllamaModel": {
+        "prefix": "Import OllamaModel",
+        "scope": "python",
+        "body": [
+            "from strands.models.ollama import OllamaModel",
+        ],
+        "description": ""
+    },
+    "Import A2AClientToolProvider": {
+        "prefix": "Import A2AClientToolProvider",
+        "scope": "python",
+        "body": [
+            "from strands_tools.a2a_client import ",
+            "A2AClientToolProvider"
+        ],
+        "description": ""
+    },
+    "Import A2AServer": {
+        "prefix": "Import A2AServer",
+        "scope": "python",
+        "body": [
+            "from strands.multiagent.a2a import A2AServer"
+        ],
+        "description": ""
+    },
+    "Import BedrockModel": {
+        "prefix": "Import BedrockModel",
+        "scope": "python",
+        "body": [
+            "from strands.models import BedrockModel"
+        ],
+        "description": ""
+    },
+    "Import FastMCP": {
+        "prefix": "Import FastMCP",
+        "scope": "python",
+        "body": [
+            "from mcp.server import FastMCP"
+        ],
+        "description": ""
+    },
+    "import MCPClient": {
+        "prefix": "import MCPClient",
+        "scope": "python",
+        "body": [
+            "from strands.tools.mcp.mcp_client import MCPClient",
+            "from mcp.client.streamable_http import ",
+            "streamablehttp_client"
+        ],
+        "description": ""
+    },
+    "import Strands": {
+        "prefix": "Import Strands",
+        "scope": "python",
+        "body": [
+            "from strands import Agent"
+        ],
+        "description": ""
+    },
+    "System prompt": {
+        "prefix": "System prompt",
+        "scope": "python",
+        "body": [
+            "\"\"\"",
+            "Tu est un game master de DnD",
+            "Tu as accès a différents tools et agents. Utilise les quand tu veux:",
+            "  - lancer des dés",
+            "  - Créer ou récupérer ou gérer des personnages",
+            "\"\"\""
+        ],
+        "description": ""
+    }
+}
