@@ -18,6 +18,17 @@
         ],
         "description": ""
     },
+    "Character agent description en": {
+        "prefix": "Character agent description en",
+        "scope": "python",
+        "body": [
+            "\"\"\"",
+            "Create and manage DnD characters with their name, class, race, statistics and background",
+            "You can write and read character files",
+            "\"\"\""
+        ],
+        "description": ""
+    },
     "Import OllamaModel": {
         "prefix": "Import OllamaModel",
         "scope": "python",
@@ -30,8 +41,7 @@
         "prefix": "Import A2AClientToolProvider",
         "scope": "python",
         "body": [
-            "from strands_tools.a2a_client import ",
-            "A2AClientToolProvider"
+            "from strands_tools.a2a_client import A2AClientToolProvider",
         ],
         "description": ""
     },
@@ -64,7 +74,7 @@
         "scope": "python",
         "body": [
             "from strands.tools.mcp.mcp_client import MCPClient",
-            "from mcp.client.streamable_http import streamablehttp_client"
+            "from mcp.client.streamable_http import streamablehttp_client",
         ],
         "description": ""
     },
@@ -85,6 +95,7 @@
             "Tu as accès a différents tools et agents. Utilise les quand tu veux:",
             "  - lancer des dés",
             "  - Créer ou récupérer ou gérer des personnages",
+            "Never answer by yourself, always use the tools and/or agents.",
             "\"\"\""
         ],
         "description": ""
@@ -143,5 +154,52 @@
             "        return f\"Error: {e}\""
         ],
         "description": "roll dice full method"
+    },
+    "System prompt en": {
+        "prefix": "System prompt en",
+        "scope": "python",
+        "body": [
+            "\"\"\"",
+            "You are a Dnd Game Master",
+            "You have access to different tools and agents. Use them when you need them:",
+            "  - draw dices",
+            "  - Create or manage characters",
+            "Never answer by yourself, always use the tools and/or agents.",
+            "\"\"\""
+        ],
+        "description": ""
+    },
+    "Structured Output": {
+    "prefix": "Structured Output",
+    "body": [
+        "class DiceOutput(BaseModel):",
+        "    dice_type: str = Field(description=\"The dice type. Ex: d4, d6, d20, etc\")",
+        "    result: str = Field(description=\"The dice result value\")",
+        "    reason: str = Field(description=\"The reason the dice was rolled. Ex: attack roll\")",
+        "",
+        "class StoryOutput(BaseModel):",
+        "    \"\"\"Model that contains information about a Person\"\"\"",
+        "    response: str = Field(description=\"Your narative response as Game Master\")",
+        "    actions_suggestions: list[str] = Field(description=\"['Action 1', 'Action 2', 'Action 3']\")",
+        "    destails: str = Field(description=\"Brief summary of tools/agents used\")",
+        "    dice_rolls: list[DiceOutput] = Field(default=[], description=\"List of dice rolls with dice_type, result, and reason\")",
+        "    ",
+        ""
+    ],
+    "description": ""
+    },
+    "import BaseModel": {
+        "prefix": "import BaseModel",
+        "body": [
+            "from pydantic import BaseModel, Field"
+        ],
+        "description": ""
+    },
+    "print json": {
+        "prefix": "print json",
+        "body": [
+            "print(json.dumps(response.structured_output.model_dump(), indent=2))"
+        ],
+        "description": ""
     }
 }
