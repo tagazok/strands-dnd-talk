@@ -5,6 +5,6 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "strands-agents-tools>=0.2.28",
-    "strands-agents[a2a,bidi-all,ollama]>=1.26.0",
+    "fastmcp>=4.0.10",
+    "strands-agents[ollama,a2a]>=1.57.2",
 ]
